@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Analytics - ProHire{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>Platform Analytics</h2>
+        <p class="text-muted">Overview of platform performance and user activity.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- User Stats -->
+    <div class="col-md-3">
+        <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body text-center">
+                <h1 class="display-4 text-primary">{{ total_seekers }}</h1>
+                <p class="card-text">Total Job Seekers</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 border-info shadow-sm">
+            <div class="card-body text-center">
+                <h1 class="display-4 text-info">{{ total_employers }}</h1>
+                <p class="card-text">Total Employers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Stats -->
+    <div class="col-md-3">
+        <div class="card h-100 border-success shadow-sm">
+            <div class="card-body text-center">
+                <h1 class="display-4 text-success">{{ active_jobs }}</h1>
+                <p class="card-text">Active Jobs</p>
+                <small class="text-muted">out of {{ total_jobs }} total</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card h-100 border-warning shadow-sm">
+            <div class="card-body text-center">
+                <h1 class="display-4 text-warning">{{ pending_jobs }}</h1>
+                <p class="card-text">Pending Approval</p>
+                <a href="/admin/jobs/job/" class="btn btn-sm btn-outline-warning mt-2">Manage</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Stats -->
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h3 class="text-secondary">Total Applications</h3>
+                <h1 class="display-3">{{ total_applications }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,459 @@
+Creating test database for alias 'default'...
+
+EE.EEEEEEE
+======================================================================
+ERROR: test_job_seeker_registration_with_resume (users.tests.UserTests)
+Test registration as a Job Seeker with resume
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\users\tests.py", line 41, in test_job_seeker_registration_with_resume
+    response = self.client.post(self.register_url, {
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\test\client.py", line 1153, in post
+    response = super().post(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\test\client.py", line 499, in post
+    return self.generic(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\test\client.py", line 671, in generic
+    return self.request(**r)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\test\client.py", line 1087, in request
+    self.check_exception(response)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\test\client.py", line 802, in check_exception
+    raise exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Projects\ProHire\ProHire\users\views.py", line 24, in register
+    UserProfile.objects.create(user=user, phone=phone, resume=resume, skills=skills)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_login (users.tests.UserTests)
+Test user login
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\users\tests.py", line 61, in test_login
+    UserProfile.objects.create(user=user, phone='0000000000')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_employer_dashboard (jobs.tests.JobTests)
+Test employer dashboard access and content
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_hr_can_post_job (jobs.tests.JobTests)
+Test that HR user can post a job
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_job_list_shows_applied_status (jobs.tests.JobTests)
+Test that job list context contains applied job IDs
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_job_recommendations (jobs.tests.JobTests)
+Test skill-based recommendations
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_job_search (jobs.tests.JobTests)
+Test job search functionality
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_seeker_can_apply (jobs.tests.JobTests)
+Test that Job Seeker can apply for a job
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+======================================================================
+ERROR: test_seeker_cannot_post_job (jobs.tests.JobTests)
+Test that Job Seeker cannot post a job
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table users_userprofile has no column named skills
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\ProHire\ProHire\jobs\tests.py", line 17, in setUp
+    UserProfile.objects.create(user=self.seeker_user, phone='0987654321')
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\ASUS\AppData\Roaming\Python\Python310\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table users_userprofile has no column named skills
+
+----------------------------------------------------------------------
+Ran 10 tests in 4.755s
+
+FAILED (errors=9)
+Destroying test database for alias 'default'...
+
+Found 10 test(s).
+System check identified no issues (0 silenced).

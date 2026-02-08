@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}Job Listings - ProHire{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h2 class="mb-4">Available Jobs</h2>
+    </div>
+    <div class="col-md-4">
+        <form action="{% url 'job_list' %}" method="get" class="d-flex">
+            <input class="form-control me-2" type="search" name="q" placeholder="Search Title or Location"
+                aria-label="Search" value="{{ query|default:'' }}">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        {% for job in jobs %}
+        <div class="card mb-4 shadow-sm job-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="card-title mb-1">
+                            {{ job.title }}
+                            {% if job.match_score and job.match_score > 0 %}
+                            <span class="badge bg-success ms-2">Recommended</span>
+                            {% endif %}
+                        </h5>
+                        <h6 class="text-secondary mb-2">{{ job.company }}</h6>
+                    </div>
+                    {% if user.is_authenticated and not user.hrprofile %}
+                    {% if job.id in applied_job_ids %}
+                    <button class="btn btn-secondary btn-sm" disabled>Applied</button>
+                    {% else %}
+                    <a href="{% url 'apply_job' job.id %}" class="btn btn-primary btn-sm">Apply</a>
+                    {% endif %}
+                    {% elif not user.is_authenticated %}
+                    <a href="{% url 'users:login' %}" class="btn btn-outline-primary btn-sm">Login</a>
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    <span class="me-3"><i class="bi bi-geo-alt"></i> {{ job.location }}</span>
+                    <span><i class="bi bi-cash"></i> {{ job.salary }}</span>
+                </div>
+
+                <p class="card-text text-truncate">{{ job.description }}</p>
+                <div class="mt-3 pt-3 border-top">
+                    <small class="text-muted">
+                        Posted {{ job.created_at|timesince }} ago by
+                        <strong>
+                            {% if job.posted_by %}
+                            {{ job.posted_by.username }}
+                            {% else %}
+                            ProHire
+                            {% endif %}
+                        </strong>
+                    </small>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-info text-center">No jobs available at the moment. Check back later!</div>
+        {% endfor %}
+    </div>
+</div>
+<style>
+    .job-card:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+</style>
+{% endblock %}

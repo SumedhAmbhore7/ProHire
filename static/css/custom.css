@@ -1,0 +1,175 @@
+[data-bs-theme="dark"] {
+    --bs-body-bg: #050510;
+    --bs-body-color: #e0e6ed;
+    --bs-primary: #3a6df0;
+    --bs-secondary: #6c757d;
+    --bs-card-bg: #0f1525;
+    --bs-card-border-color: #1f2a40;
+    --bs-link-color: #6ea8fe;
+    --bs-link-hover-color: #8bb9fe;
+}
+
+[data-bs-theme="dark"] body {
+    background-color: var(--bs-body-bg) !important;
+    color: var(--bs-body-color) !important;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: var(--bs-card-bg) !important;
+    border-color: var(--bs-card-border-color) !important;
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: #0a0e14 !important;
+    border-bottom: 1px solid #1f2a40;
+}
+
+[data-bs-theme="dark"] .dropdown-menu {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-card-border-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+    background-color: #1f2a40;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+    background-color: #0a0e14 !important;
+    border-color: #1f2a40 !important;
+    color: #e0e6ed !important;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+    background-color: #0a0e14 !important;
+    border-color: var(--bs-primary) !important;
+    color: #e0e6ed !important;
+    box-shadow: 0 0 0 0.25rem rgba(58, 109, 240, 0.25);
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #a0a6ab;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .list-group-item {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-card-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .modal-content {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-card-border-color);
+}
+
+/* Ensure headings are light only in dark mode */
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+    color: #ffffff;
+}
+
+/* Navbar text override for dark mode */
+[data-bs-theme="dark"] .navbar-brand,
+[data-bs-theme="dark"] .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Navbar Toggler Fix */
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+[data-bs-theme="light"] .navbar-toggler-icon {
+    filter: none;
+}
+
+/* --- LIGHT MODE STYLES --- */
+[data-bs-theme="light"] {
+    --bs-body-bg: #f4f6f8;
+    --bs-body-color: #2c3e50;
+    --bs-primary: #3a6df0;
+    --bs-secondary: #6c757d;
+    --bs-card-bg: #ffffff;
+    --bs-card-border-color: #e9ecef;
+    --bs-link-color: #3a6df0;
+    --bs-link-hover-color: #2a52be;
+}
+
+[data-bs-theme="light"] body {
+    background-color: var(--bs-body-bg) !important;
+    color: var(--bs-body-color) !important;
+}
+
+[data-bs-theme="light"] .card {
+    background-color: var(--bs-card-bg) !important;
+    border-color: var(--bs-card-border-color) !important;
+    color: var(--bs-body-color);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+[data-bs-theme="light"] .navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="light"] .navbar-brand,
+[data-bs-theme="light"] .nav-link {
+    color: #2c3e50 !important;
+}
+
+[data-bs-theme="light"] .nav-link:hover {
+    color: #3a6df0 !important;
+}
+
+[data-bs-theme="light"] .dropdown-menu {
+    background-color: #ffffff;
+    border-color: #e9ecef;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="light"] .dropdown-item {
+    color: #2c3e50;
+}
+
+[data-bs-theme="light"] .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #3a6df0;
+}
+
+[data-bs-theme="light"] .form-control,
+[data-bs-theme="light"] .form-select {
+    background-color: #ffffff !important;
+    border-color: #ced4da !important;
+    color: #2c3e50 !important;
+}
+
+[data-bs-theme="light"] .form-control:focus,
+[data-bs-theme="light"] .form-select:focus {
+    background-color: #ffffff !important;
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(58, 109, 240, 0.25);
+}
+
+[data-bs-theme="light"] .list-group-item {
+    background-color: #ffffff;
+    border-color: #e9ecef;
+    color: #2c3e50;
+}
