@@ -1,0 +1,26 @@
+databases:
+  - name: prohire_db
+    databaseName: prohire_db
+    user: prohire_user
+    plan: free
+
+services:
+  - type: web
+    name: prohire
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn ProHire.wsgi:application"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: DATABASE_URL
+        fromDatabase:
+          name: prohire_db
+          property: connectionString
+      - key: FIREBASE_CREDENTIALS
+        sync: true

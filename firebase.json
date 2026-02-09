@@ -1,0 +1,24 @@
+{
+    "hosting": {
+        "public": "static",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [
+            {
+                "source": "**",
+                "function": "prohire_app"
+            }
+        ]
+    },
+    "functions": {
+        "source": ".",
+        "runtime": "python311"
+    },
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    }
+}

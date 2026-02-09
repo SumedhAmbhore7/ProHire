@@ -31,6 +31,8 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
+
 
 # Application definition
 
@@ -152,3 +154,26 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'job_list'
 LOGOUT_REDIRECT_URL = 'users:login'
+
+# Firebase Configuration
+import firebase_admin
+from firebase_admin import credentials, db
+import json
+
+FIREBASE_DB_URL = 'https://prohire-jobportal-default-rtdb.asia-southeast1.firebasedatabase.app/'
+
+# Initialize Firebase if credentials are available (Best practice for Render)
+firebase_creds_json = os.environ.get('FIREBASE_CREDENTIALS')
+
+if firebase_creds_json:
+    try:
+        cred_dict = json.loads(firebase_creds_json)
+        cred = credentials.Certificate(cred_dict)
+        firebase_admin.initialize_app(cred, {
+            'databaseURL': FIREBASE_DB_URL
+        })
+        print("Firebase Admin SDK initialized successfully.")
+    except Exception as e:
+        print(f"Error initializing Firebase: {e}")
+else:
+    print("Warning: FIREBASE_CREDENTIALS not found. Firebase features may not work.")

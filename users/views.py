@@ -6,6 +6,7 @@ from .models import UserProfile, HRProfile
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
         phone = request.POST['phone']
         role = request.POST.get('role', 'seeker')
@@ -13,7 +14,10 @@ def register(request):
         if User.objects.filter(username=username).exists():
             return render(request, 'register.html', {'error': 'Username already exists'})
         
-        user = User.objects.create_user(username=username, password=password)
+        if User.objects.filter(email=email).exists():
+            return render(request, 'register.html', {'error': 'Email already connected to an account'})
+        
+        user = User.objects.create_user(username=username, email=email, password=password)
         
         if role == 'employer':
             company = request.POST.get('company', '')

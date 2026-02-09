@@ -69,3 +69,49 @@ def apply_job(request, job_id):
 def employer_dashboard(request):
     jobs = Job.objects.filter(posted_by=request.user)
     return render(request, 'employer_dashboard.html', {'jobs': jobs})
+
+@login_required
+@hr_required
+def edit_job(request, job_id):
+    job = Job.objects.get(id=job_id)
+    if job.posted_by != request.user:
+        messages.error(request, "You are not authorized to edit this job.")
+        return redirect('employer_dashboard')
+    
+    if request.method == 'POST':
+        form = JobForm(request.POST, instance=job)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Job updated successfully!")
+            return redirect('employer_dashboard')
+    else:
+        form = JobForm(instance=job)
+    return render(request, 'post_job.html', {'form': form, 'title': 'Edit Job'})
+
+@login_required
+@hr_required
+def delete_job(request, job_id):
+    job = Job.objects.get(id=job_id)
+    if job.posted_by != request.user:
+        messages.error(request, "You are not authorized to delete this job.")
+        return redirect('employer_dashboard')
+    
+    if request.method == 'POST':
+        job.delete()
+        messages.success(request, "Job deleted successfully!")
+        return redirect('employer_dashboard')
+    return render(request, 'confirm_delete.html', {'job': job})
+
+@login_required
+@hr_required
+def update_application_status(request, application_id, new_status):
+    application = Application.objects.get(id=application_id)
+    if application.job.posted_by != request.user:
+        messages.error(request, "Unauthorized action.")
+        return redirect('employer_dashboard')
+    
+    if new_status in ['accepted', 'rejected']:
+        application.status = new_status
+        application.save()
+        messages.success(request, f"Application marked as {new_status}.")
+    return redirect('employer_dashboard')
